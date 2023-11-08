@@ -66,26 +66,37 @@ void tallyFreq(int frequency[], int processedAt[]) {
     } else {
 
       // filter the time into its respective bin
-      if (time <= 9) {
-        frequency[0]++;
-      } else if (time <= 19) {
-        frequency[1]++;
-      } else if (time <= 29) {
-        frequency[2]++;
-      } else if (time <= 39) {
-        frequency[3]++;
-      } else if (time <= 49) {
-        frequency[4]++;
-      } else if (time <= 59) {
-        frequency[5]++;
-      } else if (time <= 69) {
-        frequency[6]++;
-      } else if (time <= 79) {
-        frequency[7]++;
-      } else if (time <= 89) {
-        frequency[8]++;
-      } else {
-        frequency[9]++;
+      switch (time / 10) {
+        case 0:
+            frequency[0]++;
+            break;
+        case 1:
+            frequency[1]++;
+            break;
+        case 2:
+            frequency[2]++;
+            break;
+        case 3:
+            frequency[3]++;
+            break;
+        case 4:
+            frequency[4]++;
+            break;
+        case 5:
+            frequency[5]++;
+            break;
+        case 6:
+            frequency[6]++;
+            break;
+        case 7:
+            frequency[7]++;
+            break;
+        case 8:
+            frequency[8]++;
+            break;
+        default:
+            frequency[9]++;
+            break;
       }
     }
   }
